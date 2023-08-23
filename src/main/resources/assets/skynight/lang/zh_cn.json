@@ -2,5 +2,9 @@
     "item.skynight.fabric": "Fabric",
     "itemGroup.group_indent": "魔法材料",
     "block.skynight.na_block": "不知名方块",
-    "item.skynight.rb_pickaxe": "彩虹猫之镐"
+    "item.skynight.rb_pickaxe": "彩虹猫之镐",
+    "item.skynight.fabric.tooltip": "Hello Fabric World!",
+    "item.skynight.rb_pickaxe.tooltip_1": "彩虹猫之镐以其能发出独特喵喵声而闻名",
+    "item.skynight.rb_pickaxe.tooltip_2": "在矿洞时可要小心了，怪物们闻声而来",
+    "item.skynight.rb_pickaxe.tooltip_3": "准备好迎接喵喵喵了吗？"
 }

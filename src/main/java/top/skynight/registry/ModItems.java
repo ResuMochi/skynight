@@ -12,13 +12,18 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import top.skynight.Skynight;
+import top.skynight.item.FabricItem;
+import top.skynight.item.Rb_pickaxeItem;
 
 public class ModItems {
 
-    public static final Item THE_FIRST_ITEM = registerItem("fabric", newItemMaxCount(16),
+    // TODO:完善这里的文档
+    public static final Item THE_FIRST_ITEM = registerItem("fabric",
+            new FabricItem(new FabricItemSettings().maxCount(16)),
             ItemGroups.INGREDIENTS, ModItemGroups.GROUP_INDENT);
 
-    public static final Item THE_RBPICKAXE_ITEM = registerItem("rb_pickaxe", newItemMaxCount(1),
+    public static final Item THE_RBPICKAXE_ITEM = registerItem("rb_pickaxe",
+            new Rb_pickaxeItem(new FabricItemSettings().maxCount(1)),
             ModItemGroups.GROUP_INDENT);
 
     /*
@@ -39,8 +44,11 @@ public class ModItems {
     }
 
     /**
-     * 这是一个创建item时的辅助方法
+     * 这是一个创建item时的辅助方法：快速创建item
      * 使用此方法可以快速返回 {@code new Item(new FabricItemSettings())}
+     * <p>
+     * 注意！用此方法（包括其变体）创建的item没有工具提示（tooltip），若有需要，
+     * 必须创一个新Item容器，重写appendTooltip方法
      * <p>
      * 此方法还有一个可自主设置最大堆叠数的变体方法{@code newItemMaxCount(int size)}
      */
@@ -49,7 +57,7 @@ public class ModItems {
     }
 
     /**
-     * 这是一个item变体
+     * 这是{@code newItem()}的变体
      * <p>
      * 调用时可以改变物品堆叠上限
      * 

@@ -29,8 +29,8 @@ import net.minecraft.recipe.Ingredient;
  * 
  * 此外，由于 Fabric Wiki 的文档确实过于简洁，这部分确实是需要点编程基础才能理解的。
  * 
- * 如果你理解了本文件里发生的事情，那么就在 src\main\java\top\skynight\ModTools 里完善彩虹猫大稿子吧。
- * （src\main\java\top\skynight\ModTools 里放ToolMaterial容器）
+ * 如果你理解了本文件里发生的事情，那么就在 src\main\java\top\skynight\tool 里完善彩虹猫大稿子吧。
+ * （src\main\java\top\skynight\tool 里放ToolMaterial容器）
  */
 public class ModTools implements ToolMaterial {
     /*
