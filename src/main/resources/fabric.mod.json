@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "skynight",
+	"version": "${version}",
+	"name": "skynight",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/skynight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"top.skynight.Skynight"
+		],
+		"client": [
+			"top.skynight.SkynightClient"
+		],
+		"fabric-datagen": [
+			"top.skynight.SkynightDataGenerator"
+		]
+	},
+	"mixins": [
+		"skynight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
