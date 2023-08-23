@@ -67,7 +67,7 @@ public class ModBlocks {
 
     /**
      * 这是一个构建新方块的辅助函数，传入BlockSoundGroup和方块硬度即可快捷构建
-     * 这是个不需要工具的版本
+     * 这个是不需要工具的版本
      * 
      * @param block_sound_group
      * @param strength
