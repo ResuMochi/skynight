@@ -28,7 +28,8 @@ public class ModItems {
      */
     @SafeVarargs
     public static Item registerItem(String name, Item item, RegistryKey<ItemGroup>... itemGroups) {
-        Item registerItem = Registry.register(Registries.ITEM, new Identifier(Skynight.MOD_ID, name), item);
+        Item registerItem = Registry.register(Registries.ITEM, new Identifier(Skynight.MOD_ID, name),
+                item);
         for (RegistryKey<ItemGroup> itemGroup : itemGroups) {
             ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> {
                 entries.add(registerItem);

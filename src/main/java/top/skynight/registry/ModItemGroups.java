@@ -25,7 +25,7 @@ public class ModItemGroups {
                 .icon(() -> new ItemStack(ModItems.THE_FIRST_ITEM))
                 // 添加物品到物品组里面
                 .entries((displayContext, entries) -> {
-                    entries.add(ModItems.THE_FIRST_ITEM);
+                    // entries.add(ModItems.THE_FIRST_ITEM);
                 }).build());
     }
 }
