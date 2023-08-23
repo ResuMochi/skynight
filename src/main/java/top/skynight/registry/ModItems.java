@@ -40,8 +40,9 @@ public class ModItems {
 
     /**
      * 这是一个创建item时的辅助方法
-     * 
-     * @return new Item(new FabricItemSettings())
+     * 使用此方法可以快速返回 {@code new Item(new FabricItemSettings())}
+     * <p>
+     * 此方法还有一个可自主设置最大堆叠数的变体方法{@code newItemMaxCount(int size)}
      */
     public static Item newItem() {
         return new Item(new FabricItemSettings());

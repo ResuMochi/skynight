@@ -23,7 +23,10 @@ public class ModItemGroups {
                 .displayName(Text.translatable("itemGroup.group_indent"))
                 // 物品组图标
                 .icon(() -> new ItemStack(ModItems.THE_FIRST_ITEM))
-                // 添加物品到物品组里面
+                /*
+                 * 添加物品到物品组里面
+                 * 一般来讲不需要在这里添加，注册物品时给定组就好了
+                 */
                 .entries((displayContext, entries) -> {
                     // entries.add(ModItems.THE_FIRST_ITEM);
                 }).build());
