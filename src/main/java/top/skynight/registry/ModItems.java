@@ -18,6 +18,9 @@ public class ModItems {
     public static final Item THE_FIRST_ITEM = registerItem("fabric", newItemMaxCount(16),
             ItemGroups.INGREDIENTS, ModItemGroups.GROUP_INDENT);
 
+    public static final Item THE_RBPICKAXE_ITEM = registerItem("rb_pickaxe", newItemMaxCount(1),
+            ModItemGroups.GROUP_INDENT);
+
     /*
      * 这里的写法是从 https://www.bilibili.com/video/BV1Vj411S71d/ 里学来的
      * 但是放到这里有问题，所以下面的写法是来自 https://space.bilibili.com/191676613 大佬的

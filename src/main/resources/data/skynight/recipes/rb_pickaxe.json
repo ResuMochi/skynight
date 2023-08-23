@@ -13,14 +13,13 @@
             "item": "minecraft:diamond"
         },
         "L": {
-            "item": "minecraft.lapis_lazuli"
+            "item": "minecraft:lapis_lazuli"
         },
         "S": {
-            "item": "minecraft.stick"
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "skynight:rb_pckaxe",
-        "count": 1
+        "item": "skynight:rb_pickaxe"
     }
 }
