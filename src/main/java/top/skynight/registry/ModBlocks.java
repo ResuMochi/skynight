@@ -26,9 +26,12 @@ public class ModBlocks {
     // Block(FabricBlockSettings.create().sounds(BlockSoundGroup.STONE).strength(0.4F).requiresTool()),
     // ModItemGroups.GROUP_INDENT);
 
+    /**
+     * 不知名方块
+     */
     public static final Block NA_BLOCK = registerBlock(
             "na_block",
-            newBlockRT(BlockSoundGroup.STONE, 0.5f),
+            newBlockRT(BlockSoundGroup.METAL, 0.5f),
             ModItemGroups.GROUP_INDENT);
 
     @SafeVarargs
@@ -39,7 +42,21 @@ public class ModBlocks {
 
     /**
      * 这是一个构建新方块的辅助函数，传入BlockSoundGroup和方块硬度即可快捷构建
+     * <p>
+     * 如果使用了这个方法，那么要在{@code resources\data\minecraft\tags\blocks\mineable\}下编辑相应的json文件
+     * <p>
+     * 分别是：
+     * <p>
+     * axe.json 斧头；
+     * <p>
+     * hoe.json 锄头；
+     * <p>
+     * pickaxe.json 镐子；
+     * <p>
+     * shovel.json 铲子。
+     * <p>
      * 这个函数构建的方块需要工具，即 {@code requiresTool()}
+     * <p>
      * 还有一个孪生方法：不需要工具的版本
      * 
      * @see top.skynight.registry.ModBlocks#newBlock()
