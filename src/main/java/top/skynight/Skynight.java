@@ -43,6 +43,9 @@ public class Skynight implements ModInitializer {
 		// 方块注册
 		top.skynight.registry.ModBlocks.registerModBlocks();
 
+		// 工具注册
+		// top.skynight.registry.ModTools.registerModTools();
+
 	}
 }
 // 插个眼
