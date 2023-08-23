@@ -37,10 +37,25 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(Skynight.MOD_ID, name), block);
     }
 
+    /**
+     * 这是一个构建新方块的辅助函数，传入BlockSoundGroup和方块硬度即可快捷构建
+     * 这个函数构建的方块需要工具，即 {@code requiresTool()}
+     * 还有一个孪生方法：不需要工具的版本
+     * 
+     * @see top.skynight.registry.ModBlocks#newBlock()
+     */
     public static Block newBlockRT(BlockSoundGroup block_sound_group, float strength) {
         return new Block(FabricBlockSettings.create().sounds(block_sound_group).strength(strength).requiresTool());
     }
 
+    /**
+     * 这是一个构建新方块的辅助函数，传入BlockSoundGroup和方块硬度即可快捷构建
+     * 这是个不需要工具的版本
+     * 
+     * @param block_sound_group
+     * @param strength
+     * @return
+     */
     public static Block newBlock(BlockSoundGroup block_sound_group, float strength) {
         return new Block(FabricBlockSettings.create().sounds(block_sound_group).strength(strength));
     }
