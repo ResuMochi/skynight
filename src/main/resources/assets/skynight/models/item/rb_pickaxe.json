@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "skynight:item/rb_pickaxe"
+    }
+}
