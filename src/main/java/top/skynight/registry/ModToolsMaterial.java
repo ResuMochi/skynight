@@ -31,21 +31,47 @@ import net.minecraft.recipe.Ingredient;
  * 
  * 如果你理解了本文件里发生的事情，那么就在 src\main\java\top\skynight\tool 里完善彩虹猫大稿子吧。
  * （src\main\java\top\skynight\tool 里放ToolMaterial容器）
+ * 
+ * 我在下面写了模板
+ * 
  */
-public class ModTools implements ToolMaterial {
-    /*
+public enum ModToolsMaterial implements ToolMaterial {
+    RB_PICKAXE(300, 4.5f, 3.5f, 5, 26, null);
+
+    /**
      * ModTools 可以使用 ModTools.INSTANCE 引用
      * 这里将 ModTools作为实例存在了 ModTools.INSTANCE 中，需要用的时候调用 ModTools.INSTANCE 即可
-     * 
      */
-    public static final ModTools INSTANCE = new ModTools();
+    // public static final ModTools INSTANCE = new ModTools();
+    // 已弃用，因为下面已经写好构造函数了。上面这条代码是没写好构造函数时使用的。
+
+    // 枚举（enum）
+    private final int itemDurability;/// 耐久
+    private final float itemMiningSpeedMultiplier;// 挖掘速度
+    private final float itemAttackDamage;// 攻击伤害
+    private final int itemMiningLevel;// 挖掘等级
+    private final int itemEnchantability;// 附魔能力
+    private final Ingredient itemRepairIngredient;// 修复原料
+
+    // 上面已经写好变量了，现在来写 构造函数
+    ModToolsMaterial(int itemDurability, float itemMiningSpeedMultiplier, float itemAttackDamage, int itemMiningLevel,
+            int itemEnchantability, Ingredient itemRepairIngredient) {
+        this.itemDurability = itemDurability;
+        this.itemMiningSpeedMultiplier = itemMiningSpeedMultiplier;
+        this.itemAttackDamage = itemAttackDamage;
+        this.itemMiningLevel = itemMiningLevel;
+        this.itemEnchantability = itemEnchantability;
+        this.itemRepairIngredient = itemRepairIngredient;
+    }
+
+    // 下面是对 ToolMaterial 的重写
 
     /*
      * 耐久
      */
     @Override
     public int getDurability() {
-        return 500;
+        return this.itemDurability;
     }
 
     /*
@@ -53,7 +79,7 @@ public class ModTools implements ToolMaterial {
      */
     @Override
     public float getMiningSpeedMultiplier() {
-        return 5.0F;
+        return this.itemMiningSpeedMultiplier;
     }
 
     /*
@@ -61,7 +87,7 @@ public class ModTools implements ToolMaterial {
      */
     @Override
     public float getAttackDamage() {
-        return 3.0F;
+        return this.itemAttackDamage;
     }
 
     /*
@@ -69,7 +95,7 @@ public class ModTools implements ToolMaterial {
      */
     @Override
     public int getMiningLevel() {
-        return 3;
+        return this.itemMiningLevel;
     }
 
     /*
@@ -77,7 +103,7 @@ public class ModTools implements ToolMaterial {
      */
     @Override
     public int getEnchantability() {
-        return 15;
+        return this.itemEnchantability;
     }
 
     /*
@@ -85,6 +111,6 @@ public class ModTools implements ToolMaterial {
      */
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return this.itemRepairIngredient;
     }
 }

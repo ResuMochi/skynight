@@ -23,7 +23,7 @@ public class ModItems {
             ItemGroups.INGREDIENTS, ModItemGroups.GROUP_INDENT);
 
     public static final Item THE_RBPICKAXE_ITEM = registerItem("rb_pickaxe",
-            new Rb_pickaxeItem(new FabricItemSettings().maxCount(1)),
+            new Rb_pickaxeItem(ModToolsMaterial.RB_PICKAXE, 2, 4.5f, new FabricItemSettings().maxCount(1)),
             ModItemGroups.GROUP_INDENT);
 
     /*

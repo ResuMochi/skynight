@@ -5,13 +5,21 @@ import java.util.List;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
-public class Rb_pickaxeItem extends Item {
-    public Rb_pickaxeItem(Settings settings) {
-        super(settings);
+public class Rb_pickaxeItem extends MiningToolItem {
+
+    // public Rb_pickaxeItem(Settings settings) {
+    // super(settings);
+    // }
+
+    public Rb_pickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Item.Settings settings) {
+        super((float) attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
     }
 
     @Override
