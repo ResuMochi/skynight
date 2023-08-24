@@ -3,8 +3,6 @@ package top.skynight.registry;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-// 此文件已废用！！！请看注释。
-
 /*
  * 这个文件新建了一个 ToolMaterial 的容器
  * 
