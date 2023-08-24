@@ -31,7 +31,7 @@ public class ModBlocks {
      */
     public static final Block NA_BLOCK = registerBlock(
             "na_block",
-            newBlockRT(BlockSoundGroup.STONE, 1f),
+            newBlockRT(BlockSoundGroup.STONE, 3f),
             ModItemGroups.GROUP_INDENT);
 
     @SafeVarargs
