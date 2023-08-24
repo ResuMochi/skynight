@@ -25,6 +25,7 @@ public class ModModelProvider extends FabricModelProvider {
         /*
          * 这是是设置 ModItems.THE_RBPICKAXE_ITEM 的模型类型，当前设置的是 Models.HANDHELD，像原版的稿子那样拿在手上
          * 如果设置成 Models.GENERATED 的话就会像物品一样拿在手上
+         * 这里修改后，要同步修改rb_pickaxe的json文件，不然不生效
          */
         itemModelGenerator.register(ModItems.THE_RBPICKAXE_ITEM, Models.HANDHELD);
 
