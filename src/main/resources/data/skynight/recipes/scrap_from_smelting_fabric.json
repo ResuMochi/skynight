@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:smelting",
+    "category": "misc",
+    "cooktime": 100,
+    "experience": 0.7,
+    "ingredient": {
+        "item": "skynight:fabric"
+    },
+    "result": "skynight:scrap"
+}
