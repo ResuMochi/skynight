@@ -8,17 +8,19 @@ import net.minecraft.data.client.ItemModelGenerator;
 import top.skynight.registry.ModBlocks;
 import top.skynight.registry.ModItems;
 
+// TODO: 完善这里的文档
+
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
 
-    @Override
+    @Override /* 方块 */
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NA_BLOCK);
     }
 
-    @Override
+    @Override /* 物品 */
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.THE_FIRST_ITEM, Models.GENERATED);
 

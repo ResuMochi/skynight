@@ -13,11 +13,6 @@ import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
 public class Rb_pickaxeItem extends MiningToolItem {
-
-    // public Rb_pickaxeItem(Settings settings) {
-    // super(settings);
-    // }
-
     public Rb_pickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Item.Settings settings) {
         super((float) attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
     }
@@ -26,6 +21,9 @@ public class Rb_pickaxeItem extends MiningToolItem {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         tooltip.add(Text.translatable("item.skynight.rb_pickaxe.tooltip_1"));
         tooltip.add(Text.translatable("item.skynight.rb_pickaxe.tooltip_2"));
-        tooltip.add(Text.translatable("item.skynight.rb_pickaxe.tooltip_3").setStyle(Style.EMPTY.withItalic(true)));
+        tooltip.add(Text.translatable("item.skynight.rb_pickaxe.tooltip_3")
+                /*
+                 * 这里设置了字体样式当前设置的是斜体
+                 */.setStyle(Style.EMPTY.withItalic(true)));
     }
 }

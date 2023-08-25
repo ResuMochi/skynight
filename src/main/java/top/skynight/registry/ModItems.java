@@ -22,10 +22,15 @@ public class ModItems {
     // TODO:完善这里的文档
     public static final Item THE_FIRST_ITEM = registerItem("fabric",
             new FabricItem(new FabricItemSettings().maxCount(16)),
-            ItemGroups.INGREDIENTS, ModItemGroups.GROUP_INDENT);
+            ItemGroups.INGREDIENTS/* 原版：原材料 */, ModItemGroups.GROUP_INDENT);
 
     public static final ToolItem THE_RBPICKAXE_ITEM = registerToolItem("rb_pickaxe",
-            new Rb_pickaxeItem(ModToolsMaterial.RB_PICKAXE, 3, -2.8f, new FabricItemSettings()),
+            new Rb_pickaxeItem(ModToolsMaterial.RB_PICKAXE, 3,
+                    -2.8f/*
+                          * 这里出于未知原因，若这里传入0，则游戏内显示的攻击速度是4，若输入1，则游戏内显示的是5（也就是4+1）
+                          * 所以这里传入 -2.8，那么在游戏内就会是1.2了，跟原版镐子相同的攻击速度。
+                          */
+                    , new FabricItemSettings()),
             ModItemGroups.GROUP_INDENT);
 
     public static final Item SCRAP_ITEM = registerItem("scrap",
@@ -49,6 +54,9 @@ public class ModItems {
         return registerItem;
     }
 
+    /*
+     * 这是上面方法的变体方法，除了变量类型不同几乎没变化
+     */
     @SafeVarargs
     public static ToolItem registerToolItem(String name, MiningToolItem item, RegistryKey<ItemGroup>... itemGroups) {
         ToolItem registerItem = Registry.register(Registries.ITEM, new Identifier(Skynight.MOD_ID, name),
@@ -57,7 +65,7 @@ public class ModItems {
             ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> {
                 entries.add(registerItem);
             });
-        } // 下面的写法除了变量类型不同几乎没变化
+        }
         return registerItem;
     }
 
