@@ -7,6 +7,8 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.ToolItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -22,8 +24,12 @@ public class ModItems {
             new FabricItem(new FabricItemSettings().maxCount(16)),
             ItemGroups.INGREDIENTS, ModItemGroups.GROUP_INDENT);
 
-    public static final Item THE_RBPICKAXE_ITEM = registerItem("rb_pickaxe",
-            new Rb_pickaxeItem(ModToolsMaterial.RB_PICKAXE, 0, 0f, new FabricItemSettings()),
+    public static final ToolItem THE_RBPICKAXE_ITEM = registerToolItem("rb_pickaxe",
+            new Rb_pickaxeItem(ModToolsMaterial.RB_PICKAXE, 3, -2.8f, new FabricItemSettings()),
+            ModItemGroups.GROUP_INDENT);
+
+    public static final Item SCRAP_ITEM = registerItem("scrap",
+            new Item(new FabricItemSettings().maxCount(64)),
             ModItemGroups.GROUP_INDENT);
 
     /*
@@ -34,6 +40,18 @@ public class ModItems {
     @SafeVarargs
     public static Item registerItem(String name, Item item, RegistryKey<ItemGroup>... itemGroups) {
         Item registerItem = Registry.register(Registries.ITEM, new Identifier(Skynight.MOD_ID, name),
+                item);
+        for (RegistryKey<ItemGroup> itemGroup : itemGroups) {
+            ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> {
+                entries.add(registerItem);
+            });
+        } // 下面的写法除了变量类型不同几乎没变化
+        return registerItem;
+    }
+
+    @SafeVarargs
+    public static ToolItem registerToolItem(String name, MiningToolItem item, RegistryKey<ItemGroup>... itemGroups) {
+        ToolItem registerItem = Registry.register(Registries.ITEM, new Identifier(Skynight.MOD_ID, name),
                 item);
         for (RegistryKey<ItemGroup> itemGroup : itemGroups) {
             ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> {

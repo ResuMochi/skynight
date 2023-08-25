@@ -34,7 +34,7 @@ import net.minecraft.recipe.Ingredient;
  * 
  */
 public enum ModToolsMaterial implements ToolMaterial {
-    RB_PICKAXE(300, 4.5f, 3.5f, 5, 26, null);
+    RB_PICKAXE(971, 6, 0, 3, 26, null);
 
     /**
      * ModTools 可以使用 ModTools.INSTANCE 引用
